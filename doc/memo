@@ -1,0 +1,5 @@
+使用 sudo /etc/init.d/postgresql start 会因用户权限问题无法添加用户
+（FATAL: terminating connection due to administrator command）
+使用 sudo service postgresql start 则可以
+
+	
