@@ -2,4 +2,15 @@
 （FATAL: terminating connection due to administrator command）
 使用 sudo service postgresql start 则可以
 
-	
+
+jdbc连接
+postgresql创建用户
+1、创建系统用户postgres密码，切换到该用户
+2、运行psql命令，select * from pg_shadown; 
+3、# create user thomoss; # alter user thomoss with password 'ossthom';
+4、创建数据库
+# create database thomdb;
+# select * from pg_database;
+# alter database thomdb owner to thomoss;
+5、执行sql语句
+thomdb=> \i ~/.../weboss/sql/user/create_user.sql
