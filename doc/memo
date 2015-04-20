@@ -14,3 +14,9 @@ postgresql创建用户
 # alter database thomdb owner to thomoss;
 5、执行sql语句
 thomdb=> \i ~/.../weboss/sql/user/create_user.sql
+
+
+mysql创建用户
+create user thomoss@'localhost' identified by 'ossthom';
+create database thomdb;
+grant all privileges on thomdb.* to thomoss@'localhost';
