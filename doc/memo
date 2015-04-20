@@ -20,3 +20,4 @@ mysql创建用户
 create user thomoss@'localhost' identified by 'ossthom';
 create database thomdb;
 grant all privileges on thomdb.* to thomoss@'localhost';
+
