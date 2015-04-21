@@ -1,3 +1,14 @@
+#-------------------- t_permission start -------------------------
+drop table if exists t_permission cascade;
+create table t_permission (
+
+	)
+#-------------------- t_role start -------------------------
+drop table if exists t_role cascade;
+create table t_role (
+	f_level int not null,
+	f_permLevel int not null
+	) 
 
 #-------------------- t_phone start -------------------------
 drop table if exists t_phone cascade;
@@ -48,6 +59,7 @@ create table t_user(
 	f_roleid integer,
 	f_contactid integer,
 	f_description varchar(255),
+	f_roleLevel int not null,
 	unique (f_id, f_nickname),
 	#constraint fk_user_role_id foreign key(f_roleid) references t_role(f_id) on delete cascade on update cascade,
 	foreign key(f_contactid) references t_contact(f_id) on delete cascade on update cascade
