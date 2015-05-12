@@ -45,10 +45,10 @@ public class BaseDaoJdbcImpl<T> implements BaseDao<T> {
     @Override
     public Connection getConnection() {
         
-//        String driver = "org.postgresql.Driver";
-//        String url = "jdbc:postgresql://127.0.0.1:5432/thomdb";
-    	String driver = "com.mysql.jdbc.Driver";
-        String url = "jdbc:mysql://localhost:3306/thomdb";
+        String driver = "org.postgresql.Driver";
+        String url = "jdbc:postgresql://127.0.0.1:5432/thomdb";
+//    	String driver = "com.mysql.jdbc.Driver";
+//        String url = "jdbc:mysql://localhost:3306/thomdb";
         String username = "thomoss";
         String password = "ossthom";
         

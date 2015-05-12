@@ -12,6 +12,19 @@
 <web-app>
 -->
    <display-name>Archetype Created Web Application</display-name>
+   <description></description>
+   
+   	<!-- ============================Servlet Configure========================= -->
+    <servlet>
+        <servlet-name>AuthServlet</servlet-name>
+        <servlet-class>com.anyuan.thomweboss.servlet.AuthServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>AuthServlet</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+    
 
 	<!-- ============================Spring Configure========================= -->
 	<filter>
@@ -33,6 +46,22 @@
 		<filter-name>characterEncodingFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
+	
+	<!-- 
+	<filter>
+        <filter-name>openSessionInViewFilter</filter-name>
+        <filter-class>org.springframework.orm.hibernate3.support.OpenSessionInViewFilter</filter-class>
+        <init-param>
+            <param-name>singleSession</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </filter>
+    
+	<filter-mapping>
+	    <filter-name>openSessionInViewFilter</filter-name>
+	    <url-pattern>*.do</url-pattern>
+	</filter-mapping>
+	-->
 
 	<!-- spring 前端控制器负责分派 -->
 	<servlet>
@@ -56,6 +85,8 @@
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 	
+	
+
 	 <!-- ============================CXF Configure========================= -->
     <servlet>
         <description>Apache CXF Endpoint</description>
@@ -111,4 +142,11 @@
     </servlet-mapping>
      -->
   
+  	<!-- ============================Welcome Configure========================= -->
+    <!-- 
+    <welcome-file-list>
+        <welcome-file>views/welcome.jsp</welcome-file>
+        <welcome-file>views/index.jsp</welcome-file>
+    </welcome-file-list>
+    -->
 </web-app>

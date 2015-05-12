@@ -15,9 +15,11 @@
  */
 package com.anyuan.thomweboss.model.user;
 
-import com.anyuan.thomweboss.model.Model;
+import java.util.List;
 
 import javax.xml.bind.annotation.XmlRootElement;
+
+import com.anyuan.thomweboss.model.Model;
 
 /**
  * TODO
@@ -44,6 +46,11 @@ public class Contact extends Model {
      */
     private Address address;
     
+    /**
+     * 
+     */
+    private List<Address> addresses;
+    
     public Contact() {
         
     }
@@ -59,6 +66,19 @@ public class Contact extends Model {
         this.email = email;
         this.address = address;
     }
+    
+    /**
+     * @param id
+     * @param name
+     * @param addresses
+     */
+    public Contact(Phone phone, String email, List<Address> addresses) {
+        super();
+        this.phone = phone;
+        this.email = email;
+        this.addresses = addresses;
+    }
+
 
     /**
      * @return the phone

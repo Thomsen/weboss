@@ -64,5 +64,22 @@
 	        <value>/**/user/*.do=userController</value>
 	    </property>
 	</bean>
+	
+	<!--  
+	<bean id="internalPathMethodNameResolver" class="org.springframework.web.servlet.mvc.multiaction.InternalPathMethodNameResolver" />
+	
+	<bean id="userController" class="com.anyuan.thomoss.controller.UserController">
+	    <property name="methodNameResolver">
+	        <ref bean="internalPathMethodNameResolver" />
+	    </property>
+	</bean>
+	-->
+	
+	<!--  
+	<bean id="userController" class="com.anyuan.thomoss.controller.UserController"
+	    abstract="false" singleton="true" lazy-init="default" autowire="default" 
+	    dependency-check="default">
+	</bean>
+	-->
 	<bean id="userController" class="com.anyuan.thomweboss.controller.user.UserController" />
 </beans>

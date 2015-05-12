@@ -26,6 +26,7 @@
     </jaxws:server>
      -->
 
+	<!-- jax-ws规范是一组xml web service的java api。Server端定义SEI（service endpoint interface） -->		
     <jaxws:server id="pdaCommonService.v1" serviceClass="com.anyuan.thomweboss.ws.pda.IPdaCommonService"
          address="/pdaCommonService/v1">
          <jaxws:serviceBean>
