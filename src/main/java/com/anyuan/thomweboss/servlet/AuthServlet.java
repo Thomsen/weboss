@@ -51,9 +51,11 @@ public class AuthServlet extends HttpServlet {
             throws ServletException, IOException {
         
         Connection connection = null;
-        String url = "jdbc:postgresql://127.0.0.1:5432/thomdb";
+//        String url = "jdbc:postgresql://127.0.0.1:5432/thomdb";
+        String url = "jdbc:mysql://127.0.0.1:3306/thomdb";
         try {
-            Class.forName("org.postgresql.Driver");
+//            Class.forName("org.postgresql.Driver");
+        	Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection(url, "thomoss", "ossthom");
             connection.getCatalog();
         } catch (ClassNotFoundException e) {
@@ -65,7 +67,7 @@ public class AuthServlet extends HttpServlet {
         String username = req.getParameter("loginUsername");
         String password = req.getParameter("loginPassword");
         
-        String sql = "select * from t_user where f_username = '" + username + "';";
+        String sql = "select * from t_user where f_loginname = '" + username + "';";
         Statement statement = null;
         ResultSet resultSet = null;
         
