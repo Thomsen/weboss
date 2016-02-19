@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:soap="http://cxf.apache.org/bindings/soap"  
+	xmlns:jaxws="http://cxf.apache.org/jaxws" 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+							 http://www.springframework.org/schema/beans/spring-beans.xsd
+							 http://cxf.apache.org/bindings/soap 
+							 http://cxf.apache.org/schemas/configuration/soap.xsd 
+							 http://cxf.apache.org/jaxws  
+							 http://cxf.apache.org/schemas/jaxws.xsd">
+
+    <import resource="classpath:META-INF/cxf/cxf.xml" />
+    <import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />
+    <import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
+    
+    <!-- jaxws:server coming from xfire api  -->
+    <!-- v1和v2中有login方式，但是client调用会按照顺序，找到后就不在往下执行 -->
+    <!-- 
+    <jaxws:server id="pdaCommonService" serviceClass="com.anyuan.weboss.api.ws.pda.IPdaCommonService"
+        address="/pdaCommonService" >
+        <jaxws:serviceBean>
+            <bean class="com.anyuan.thomweboss.ws.pda.impl.v1.PdaCommonService" />
+            <bean class="com.anyuan.thomweboss.ws.pda.impl.v2.PdaCommonService" />	
+        </jaxws:serviceBean>
+    </jaxws:server>
+     -->
+
+	<!-- jax-ws规范是一组xml web service的java api。Server端定义SEI（service endpoint interface） -->		
+    <jaxws:server id="pdaCommonService.v1" serviceClass="com.anyuan.weboss.api.ws.pda.IPdaCommonService"
+         address="/pdaCommonService/v1">
+         <jaxws:serviceBean>
+             <bean class="com.anyuan.weboss.api.ws.pda.impl.v1.PdaCommonService" />
+         </jaxws:serviceBean>
+     </jaxws:server>
+     
+    <jaxws:server id="pdaCommonService.v2" serviceClass="com.anyuan.weboss.api.ws.pda.impl.v2.PdaCommonService"
+         address="/pdaCommonService/v2">
+         
+    </jaxws:server>
+    
+    <jaxws:endpoint implementor="com.anyuan.weboss.api.ws.pda.impl.v1.PdaCommonService"
+        address="/pdaCommonService/v3">
+        
+    </jaxws:endpoint>
+    
+    <!-- 
+    <jaxws:endpoint implementor="com.anyuan.weboss.api.ws.pda.IPdaCommonService"
+        address="/pdaCommonService/v4">
+        
+    </jaxws:endpoint>
+     -->
+    
+    <!-- 
+    <jaxws:endpoint id="pdaCommonService" implementorClass="com.anyuan.weboss.api.ws.pda.impl.v2.PdaCommonService"
+        address="/pdaCommonService" >
+        
+    </jaxws:endpoint>
+     -->
+    
+    <!-- jaxws:endpoint coming from jaxws api -->
+    
+</beans>
