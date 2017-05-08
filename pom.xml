@@ -43,7 +43,7 @@
 		<axis2.version>1.6.2</axis2.version>
 		
 		<!-- others -->
-		<filename>thomweboss</filename>
+		<filename>weboss</filename>
     	
 	</properties>
 	<dependencies>

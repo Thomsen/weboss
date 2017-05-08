@@ -7,7 +7,7 @@
 <title>创建联系人</title>
 </head>
 <body>
-	<form action="../../rest/contacts" method="POST">
+	<form action="../../jerseyrest/contacts" method="POST">
 		<label for="id">ID</label>
 		<input name="id" />
 		<label for="name">Name</label>

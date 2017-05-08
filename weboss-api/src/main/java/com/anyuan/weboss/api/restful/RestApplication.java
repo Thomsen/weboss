@@ -37,6 +37,6 @@ public class RestApplication extends ResourceConfig {
 //    }
     
    public RestApplication() {
-       packages("com.anyuan.thomweboss.resetful");
+       packages("com.anyuan.weboss.api.restful");
    }
 }

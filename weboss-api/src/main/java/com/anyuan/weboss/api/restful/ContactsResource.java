@@ -82,6 +82,6 @@ public class ContactsResource {
                 Response.created(uri).build();
                 
 //                servletResponse.sendRedirect("../views/user/new_contact.jsp");
-                servletResponse.sendRedirect("../rest/contacts");
+                servletResponse.sendRedirect("../jerseyrest/contacts");
     }
 }
